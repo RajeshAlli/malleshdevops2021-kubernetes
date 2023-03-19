@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devops11-httpd-nodename
+  namespace: test
+spec:
+  nodeName: k8-worker-2
+  containers:
+  - name: my-httpd
+    image: httpd
+    ports:
+    - containerPort: 80

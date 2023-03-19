@@ -1,0 +1,166 @@
+
+baXterm Personal Edition v22.1 •                 │
+    │               (SSH client, X server and network tools)               │
+    │                                                                      │
+    │ ⮞ SSH session to kushal@34.173.0.247                                 │
+    │   • Direct SSH      :  ✓                                             │
+    │   • SSH compression :  ✓                                             │
+    │   • SSH-browser     :  ✓                                             │
+    │   • X11-forwarding  :  ✓  (remote display is forwarded through SSH)  │
+    │                                                                      │
+    │ ⮞ For more info, ctrl+click on help or visit our website.            │
+    └──────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 5.4.0-1086-gcp x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Aug 26 09:03:32 UTC 2022
+
+  System load:  0.11               Users logged in:        0
+  Usage of /:   36.1% of 19.20GB   IP address for ens4:    10.128.0.23
+  Memory usage: 13%                IP address for docker0: 172.17.0.1
+  Swap usage:   0%                 IP address for tunl0:   192.168.8.64
+  Processes:    152
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+3 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+New release '20.04.4 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Fri Aug 26 01:11:24 2022 from 122.172.82.199
+kushal@k8-master:~$ cd devops11-k8/
+kushal@k8-master:~/devops11-k8$ ll
+total 64
+drwxrwxr-x 16 kushal kushal 4096 Aug 26 01:32 ./
+drwxr-xr-x 11 kushal kushal 4096 Aug 26 09:03 ../
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 11:18 NodeIsolation/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 11:11 config-secret/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 10:35 daemonset/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 10:29 deploy/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 10:17 imagepullsecret/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 10:10 job-cronjob/
+drwxrwxr-x  2 kushal kushal 4096 Aug 26 02:18 live-read/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 07:15 pod/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 07:49 rc-rs/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 08:24 resources/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 08:31 service/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 08:43 statefulset/
+drwxrwxr-x  2 kushal kushal 4096 Aug 25 16:15 taint-toleration/
+drwxrwxr-x  4 kushal kushal 4096 Aug 24 08:48 volumes/
+kushal@k8-master:~/devops11-k8$ cd live-read/
+kushal@k8-master:~/devops11-k8/live-read$ ll
+total 40
+drwxrwxr-x  2 kushal kushal 4096 Aug 26 02:18 ./
+drwxrwxr-x 16 kushal kushal 4096 Aug 26 01:32 ../
+-rw-rw-r--  1 kushal kushal  272 Aug 26 02:00 liveness-pod-cmd.yaml
+-rw-rw-r--  1 kushal kushal  249 Aug 26 01:39 liveness-pod-fail.yaml
+-rw-rw-r--  1 kushal kushal  242 Aug 26 01:52 liveness-pod-tcpsocket-fail.yaml
+-rw-rw-r--  1 kushal kushal  235 Aug 26 01:50 liveness-pod-tcpsocket.yaml
+-rw-rw-r--  1 kushal kushal  239 Aug 26 01:32 liveness-pod.yaml
+-rw-rw-r--  1 kushal kushal  379 Aug 26 02:14 petclinic.yaml
+-rw-rw-r--  1 kushal kushal  255 Aug 26 02:18 readiness-pod-fail.yaml
+-rw-rw-r--  1 kushal kushal  250 Aug 26 02:17 readiness-pod.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi  liveness-pod-cmd.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi liveness-pod-fail.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi liveness-pod-tcpsocket-fail.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi  liveness-pod-tcpsocket.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi liveness-pod.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi petclinic.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi
+Authenticating with public key "kushal"
+    ┌──────────────────────────────────────────────────────────────────────┐
+    │                 • MobaXterm Personal Edition v22.1 •                 │
+    │               (SSH client, X server and network tools)               │
+    │                                                                      │
+    │ ⮞ SSH session to kushal@34.173.0.247                                 │
+    │   • Direct SSH      :  ✓                                             │
+    │   • SSH compression :  ✓                                             │
+    │   • SSH-browser     :  ✓                                             │
+    │   • X11-forwarding  :  ✓  (remote display is forwarded through SSH)  │
+    │                                                                      │
+    │ ⮞ For more info, ctrl+click on help or visit our website.            │
+    └──────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 5.4.0-1086-gcp x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Aug 26 09:03:32 UTC 2022
+
+  System load:  0.11               Users logged in:        0
+  Usage of /:   36.1% of 19.20GB   IP address for ens4:    10.128.0.23
+  Memory usage: 13%                IP address for docker0: 172.17.0.1
+  Swap usage:   0%                 IP address for tunl0:   192.168.8.64
+  Processes:    152
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+3 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+New release '20.04.4 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Fri Aug 26 01:11:24 2022 from 122.172.82.199
+kushal@k8-master:~$ cd devops11-k8/
+kushal@k8-master:~/devops11-k8$ ll
+total 64
+drwxrwxr-x 16 kushal kushal 4096 Aug 26 01:32 ./
+drwxr-xr-x 11 kushal kushal 4096 Aug 26 09:03 ../
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 11:18 NodeIsolation/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 11:11 config-secret/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 10:35 daemonset/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 10:29 deploy/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 10:17 imagepullsecret/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 10:10 job-cronjob/
+drwxrwxr-x  2 kushal kushal 4096 Aug 26 02:18 live-read/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 07:15 pod/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 07:49 rc-rs/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 08:24 resources/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 08:31 service/
+drwxrwxr-x  2 kushal kushal 4096 Aug 24 08:43 statefulset/
+drwxrwxr-x  2 kushal kushal 4096 Aug 25 16:15 taint-toleration/
+drwxrwxr-x  4 kushal kushal 4096 Aug 24 08:48 volumes/
+kushal@k8-master:~/devops11-k8$ cd live-read/
+kushal@k8-master:~/devops11-k8/live-read$ ll
+total 40
+drwxrwxr-x  2 kushal kushal 4096 Aug 26 02:18 ./
+drwxrwxr-x 16 kushal kushal 4096 Aug 26 01:32 ../
+-rw-rw-r--  1 kushal kushal  272 Aug 26 02:00 liveness-pod-cmd.yaml
+-rw-rw-r--  1 kushal kushal  249 Aug 26 01:39 liveness-pod-fail.yaml
+-rw-rw-r--  1 kushal kushal  242 Aug 26 01:52 liveness-pod-tcpsocket-fail.yaml
+-rw-rw-r--  1 kushal kushal  235 Aug 26 01:50 liveness-pod-tcpsocket.yaml
+-rw-rw-r--  1 kushal kushal  239 Aug 26 01:32 liveness-pod.yaml
+-rw-rw-r--  1 kushal kushal  379 Aug 26 02:14 petclinic.yaml
+-rw-rw-r--  1 kushal kushal  255 Aug 26 02:18 readiness-pod-fail.yaml
+-rw-rw-r--  1 kushal kushal  250 Aug 26 02:17 readiness-pod.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi  liveness-pod-cmd.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi liveness-pod-fail.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi liveness-pod-tcpsocket-fail.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi  liveness-pod-tcpsocket.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi liveness-pod.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi petclinic.yaml
+kushal@k8-master:~/devops11-k8/live-read$ vi
+
+
+
+
+
+
+

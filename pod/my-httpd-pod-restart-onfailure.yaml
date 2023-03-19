@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devops11-httpd-restart-onfailure
+  namespace: qa-test
+spec:
+  containers:
+  - name: my-httpd
+    image: busybox
+    command: ['sh', '-c', 'echxo devops11 && sleep 300' ]
+  restartPolicy: OnFailure
+

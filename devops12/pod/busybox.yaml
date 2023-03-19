@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-busy-3
+  labels:
+    purpose: test
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    command: ['sh', '-c','echo hello && sleep 5000']

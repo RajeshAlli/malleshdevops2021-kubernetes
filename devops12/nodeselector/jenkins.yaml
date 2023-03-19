@@ -1,0 +1,11 @@
+apiVersion: v1 # in which version the resource has been developed.
+kind: Pod  # this indicate the kubernetes resource type
+metadata:
+  name: my-jenkins-2
+  namespace: dev
+spec:
+  containers:
+  - name: jenkins
+    image: jenkins/jenkins:lts
+  nodeSelector:
+    env: dev-1

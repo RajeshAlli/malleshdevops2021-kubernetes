@@ -1,0 +1,37 @@
+apiVersion: v1
+data:
+  my.cnf: |+
+    [mysqld]
+    server_id=1
+    event_scheduler = 1
+    tls_version=TLSv1.2
+    local-infile = 0
+    symbolic-links = 0
+
+    max_connections=2000
+    table_open_cache=2000
+    table_definition_cache=2000
+
+
+    key_buffer_size = 36M
+    max_allowed_packet = 16M
+    join_buffer_size = 16M
+
+    
+    max_heap_table_size=100M
+    tmp_table_size=100M
+
+    
+    port=3306
+    skip-name-resolve
+
+    
+    performance_schema
+
+    
+    datadir = /var/lib/mysql
+
+kind: ConfigMap
+metadata:
+  name: mariadb-config-test
+

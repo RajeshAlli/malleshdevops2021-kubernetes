@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devops11-httpd-security-2
+  namespace: qa-test
+spec:
+  securityContext:
+    runAsUser: 1001
+    fsGroup: 1001
+  containers:
+  - name: my-httpd
+    image: busybox
+    command: ['sh', '-c', 'mkdir -p /tmp/devops12 && sleep 300' ]
+

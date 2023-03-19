@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: demo-daemonset-vol
+  namespace: prod
+spec:
+  selector:
+    matchLabels:
+       app: monitoring
+  template:
+    metadata:
+      labels:
+        app: monitoring
+    spec:
+      containers:
+        - name: monitoring
+          image: busybox
+          command: ['sh', '-c', 'echo devops11>>/tmp/test/test.txt && sleep 300' ]
+          volumeMounts:
+          - mountPath: /tmp/test
+            name: devops11-test
+      volumes:
+      - name: devops11-test
+        emptyDir: {}

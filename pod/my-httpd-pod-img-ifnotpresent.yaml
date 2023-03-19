@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devops11-httpd-image-ifnotpresent-1
+  namespace: prod
+spec:
+  nodeName: k8-worker-2
+  containers:
+  - name: my-httpd
+    image: httpd:2.4
+    imagePullPolicy: IfNotPresent

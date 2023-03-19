@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-example
+  namespace: dev
+  labels:
+    app: nginx-rs-pod
+spec:
+  replicas: 6 
+  selector:
+    matchLabels:
+      purpose: example-1
+  template:
+    metadata:
+      labels:
+        purpose: example-1
+        type: web
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.19.1
+          resources:
+            requests:
+              memory: 500Mi
+              cpu: "50m"
+            limits:
+              memory: 800Mi
+              cpu: "100m"
+

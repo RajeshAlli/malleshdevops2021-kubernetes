@@ -1,0 +1,10 @@
+apiVersion: v1 # in which version the resource has been developed.
+kind: Pod  # this indicate the kubernetes resource type
+metadata:
+  name: test-pod-5
+spec:
+  containers:
+  - name: web-server
+    image: httpd:2.4
+    ports:
+    - containerPort: 80

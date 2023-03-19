@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: devops11-httpd-rs
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     type: web-rs
+ template:
+   metadata:
+     name: devops11-httpd
+     labels:
+       type: web-rs
+       environment: prod
+   spec:
+     containers:
+     - name: my-httpd
+       image: httpd

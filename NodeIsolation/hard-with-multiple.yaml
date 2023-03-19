@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-node-affinity-both-soft-hard-multiple-3
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: env
+            operator: In
+            values:
+            - test
+        - matchExpressions:
+          - key: tier
+            operator: In
+            values:
+            - web
+  containers:
+  - name: with-node-affinity
+    image: httpd
+

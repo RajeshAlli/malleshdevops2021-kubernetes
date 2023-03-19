@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-hostpath
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: helloworldhostpath
+  template:
+    metadata:
+      labels:
+        run: helloworldhostpath
+    spec:
+      volumes:
+        - name: task-pv-storage
+          hostPath:
+            path: /tmp/devops11
+            type: Directory
+      containers:
+      - name: helloworld
+        image: httpd
+        ports:
+        - containerPort: 9123
+        volumeMounts:
+         - name: task-pv-storage
+           mountPath: /var/www/html
+

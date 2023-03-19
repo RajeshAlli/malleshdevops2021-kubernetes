@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+   name: httpd-svc-nodeport
+   namespace: prod
+spec:
+  type: NodePort
+  selector:
+    env: prod
+  ports:
+  - port: 8080
+    targetPort: 80
